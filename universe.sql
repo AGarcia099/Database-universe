@@ -126,7 +126,8 @@ CREATE TABLE public.planet (
     name character varying(50) NOT NULL,
     star_id integer NOT NULL,
     is_spherical boolean NOT NULL,
-    distance_from_star numeric NOT NULL
+    distance_from_star numeric NOT NULL,
+    diameter_in_km integer DEFAULT 0 NOT NULL
 );
 
 
@@ -200,7 +201,8 @@ CREATE TABLE public.star (
     name character varying(50) NOT NULL,
     galaxy_id integer NOT NULL,
     is_active boolean NOT NULL,
-    distance_from_galaxy_center numeric NOT NULL
+    distance_from_galaxy_center numeric NOT NULL,
+    temperature_in_kelvin integer DEFAULT 0 NOT NULL
 );
 
 
@@ -305,18 +307,18 @@ INSERT INTO public.moon VALUES (20, 'Proxima c2', 4, false, 200);
 -- Data for Name: planet; Type: TABLE DATA; Schema: public; Owner: freecodecamp
 --
 
-INSERT INTO public.planet VALUES (1, 'Earth', 1, true, 1);
-INSERT INTO public.planet VALUES (2, 'Mars', 1, true, 1.5);
-INSERT INTO public.planet VALUES (3, 'Jupiter', 1, true, 5.2);
-INSERT INTO public.planet VALUES (4, 'Proxima b', 2, true, 0.05);
-INSERT INTO public.planet VALUES (5, 'Vega I', 6, false, 3);
-INSERT INTO public.planet VALUES (6, 'Vega II', 6, true, 6);
-INSERT INTO public.planet VALUES (7, 'Alpha I', 5, true, 2.2);
-INSERT INTO public.planet VALUES (8, 'Beta III', 4, true, 9.5);
-INSERT INTO public.planet VALUES (9, 'Gamma II', 3, false, 7);
-INSERT INTO public.planet VALUES (10, 'Epsilon', 1, true, 8);
-INSERT INTO public.planet VALUES (11, 'Saturn', 1, true, 9.5);
-INSERT INTO public.planet VALUES (12, 'Neptune', 1, true, 30);
+INSERT INTO public.planet VALUES (1, 'Earth', 1, true, 1, 12742);
+INSERT INTO public.planet VALUES (2, 'Mars', 1, true, 1.5, 6779);
+INSERT INTO public.planet VALUES (3, 'Jupiter', 1, true, 5.2, 139820);
+INSERT INTO public.planet VALUES (4, 'Proxima b', 2, true, 0.05, 5000);
+INSERT INTO public.planet VALUES (5, 'Vega I', 6, false, 3, 5000);
+INSERT INTO public.planet VALUES (6, 'Vega II', 6, true, 6, 5000);
+INSERT INTO public.planet VALUES (7, 'Alpha I', 5, true, 2.2, 5000);
+INSERT INTO public.planet VALUES (8, 'Beta III', 4, true, 9.5, 5000);
+INSERT INTO public.planet VALUES (9, 'Gamma II', 3, false, 7, 5000);
+INSERT INTO public.planet VALUES (10, 'Epsilon', 1, true, 8, 5000);
+INSERT INTO public.planet VALUES (11, 'Saturn', 1, true, 9.5, 5000);
+INSERT INTO public.planet VALUES (12, 'Neptune', 1, true, 30, 5000);
 
 
 --
@@ -333,12 +335,12 @@ INSERT INTO public.satellite VALUES (4, 'Satellite I', 'Communication', true, 1)
 -- Data for Name: star; Type: TABLE DATA; Schema: public; Owner: freecodecamp
 --
 
-INSERT INTO public.star VALUES (1, 'Sun', 1, true, 27000);
-INSERT INTO public.star VALUES (2, 'Proxima Centauri', 1, true, 27010);
-INSERT INTO public.star VALUES (3, 'Sirius', 2, true, 8100);
-INSERT INTO public.star VALUES (4, 'Betelgeuse', 2, false, 13400);
-INSERT INTO public.star VALUES (5, 'Alpha Centauri', 3, true, 12300);
-INSERT INTO public.star VALUES (6, 'Vega', 4, true, 25000);
+INSERT INTO public.star VALUES (1, 'Sun', 1, true, 27000, 5778);
+INSERT INTO public.star VALUES (2, 'Proxima Centauri', 1, true, 27010, 3042);
+INSERT INTO public.star VALUES (3, 'Sirius', 2, true, 8100, 4000);
+INSERT INTO public.star VALUES (4, 'Betelgeuse', 2, false, 13400, 4000);
+INSERT INTO public.star VALUES (5, 'Alpha Centauri', 3, true, 12300, 4000);
+INSERT INTO public.star VALUES (6, 'Vega', 4, true, 25000, 4000);
 
 
 --
